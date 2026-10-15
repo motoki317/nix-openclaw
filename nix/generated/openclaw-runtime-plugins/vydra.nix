@@ -13,15 +13,15 @@
   minHostVersion = ">=2026.7.2";
   expectedIntegrity = "";
   packageName = "@openclaw/vydra-provider";
-  version = "2026.9.5";
-  tarballUrl = "https://registry.npmjs.org/@openclaw/vydra-provider/-/vydra-provider-2026.9.5.tgz";
-  npmIntegrity = "sha512-+tWOpplbUYvFbOjfoCy76eEx62afs49oPY8zNQWuvh1OfKh7zclSlx6Q48e80ZYPH5ZU6Zc6//NRyHD1sLPc5Q==";
-  npmShasum = "2941a7d86ffaf3aeec7707a2b984d4bcc6f514ca";
-  nixHash = "sha256-IfI3O77ZSpYBLl9osdAaLmgSTBetgQlNI99EtaUG3jM=";
+  version = "2026.10.3";
+  tarballUrl = "https://registry.npmjs.org/@openclaw/vydra-provider/-/vydra-provider-2026.10.3.tgz";
+  npmIntegrity = "sha512-q/jy6sg5LWfIDraVMrmnhGXFe/scDGNDMHJifjBNbOSFiKDSOOAoMj+DgOpJzCK/pEvLYLEqRG7xW7o6aKIFKg==";
+  npmShasum = "dff82be7815278ff7bdb9d7582d6105e5e23c0d9";
+  nixHash = "sha256-ampYKejtDQmXvvDvVwg10YKD8mJGjOo7pLDHYHkAcsY=";
   dependencyMode = "none";
   manifestId = "vydra";
-  openclawCompat = ">=2026.9.5";
-  peerOpenClaw = ">=2026.9.5";
+  openclawCompat = ">=2026.10.3";
+  peerOpenClaw = ">=2026.10.3";
   runtimeExtensions = [
     "./dist/index.js"
   ];

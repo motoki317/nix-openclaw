@@ -13,15 +13,15 @@
   minHostVersion = ">=2026.6.9";
   expectedIntegrity = "";
   packageName = "@openclaw/signal";
-  version = "2026.9.5";
-  tarballUrl = "https://registry.npmjs.org/@openclaw/signal/-/signal-2026.9.5.tgz";
-  npmIntegrity = "sha512-/13NWVdrlZ7aZ5RtSYeT9+WGFCvNaEkrgb4fpS7i6gfRIRQANkk2r886AQ62ZYDZFk5uj5qIi8vZ4cGG/toGPw==";
-  npmShasum = "120d6c2d44296e4dedd742deea7aad8547d405da";
-  nixHash = "sha256-sw+iPAdH/vMQHTWBb/Bf/ioVAWT/3a0k4yNWnt76zec=";
+  version = "2026.10.3";
+  tarballUrl = "https://registry.npmjs.org/@openclaw/signal/-/signal-2026.10.3.tgz";
+  npmIntegrity = "sha512-Tw3AnDQ9mlXkZR7P4X8KGJmv0DgKFMo7JCsiMXTkafYwSr+ktmaS+FSTnaAZndhAwJeVwBD/bmhig89NdOBcGA==";
+  npmShasum = "bb894229095e107411016dbf026b26809aba5e70";
+  nixHash = "sha256-SSjTSrejeINHO2pr+V3fRGi6gswxNLLRBcRjTR/Bk64=";
   dependencyMode = "bundled";
   manifestId = "signal";
-  openclawCompat = ">=2026.9.5";
-  peerOpenClaw = ">=2026.9.5";
+  openclawCompat = ">=2026.10.3";
+  peerOpenClaw = ">=2026.10.3";
   runtimeExtensions = [
     "./dist/index.js"
   ];
@@ -31,15 +31,38 @@
   ];
   contracts = { };
   dependencies = {
+    "@openclaw/fs-safe" = "0.24.2";
     ws = "8.21.3";
-    zod = "4.5.4";
+    zod = "4.6.5";
   };
   optionalDependencies = { };
   bundleDependencies = [
+    "@openclaw/fs-safe"
     "ws"
     "zod"
   ];
   bundledPackageRoots = [
+    "node_modules/@openclaw/fs-safe"
+    "node_modules/@openclaw/fs-safe-darwin-arm64"
+    "node_modules/@openclaw/fs-safe-darwin-x64"
+    "node_modules/@openclaw/fs-safe-linux-arm64-gnu"
+    "node_modules/@openclaw/fs-safe-linux-arm64-musl"
+    "node_modules/@openclaw/fs-safe-linux-x64-gnu"
+    "node_modules/@openclaw/fs-safe-linux-x64-musl"
+    "node_modules/@openclaw/fs-safe-win32-x64-msvc"
+    "node_modules/core-util-is"
+    "node_modules/immediate"
+    "node_modules/inherits"
+    "node_modules/isarray"
+    "node_modules/jszip"
+    "node_modules/lie"
+    "node_modules/pako"
+    "node_modules/process-nextick-args"
+    "node_modules/readable-stream"
+    "node_modules/safe-buffer"
+    "node_modules/setimmediate"
+    "node_modules/string_decoder"
+    "node_modules/util-deprecate"
     "node_modules/ws"
     "node_modules/zod"
   ];

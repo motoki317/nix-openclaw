@@ -26,6 +26,7 @@
   discord = import ./discord.nix;
   duckduckgo = import ./duckduckgo.nix;
   exa = import ./exa.nix;
+  facetime = import ./facetime.nix;
   featherless = import ./featherless.nix;
   feishu = import ./feishu.nix;
   firecrawl = import ./firecrawl.nix;
@@ -56,6 +57,7 @@
   nextcloud-talk = import ./nextcloudTalk.nix;
   nostr = import ./nostr.nix;
   novita = import ./novita.nix;
+  onnx = import ./onnx.nix;
   opencode = import ./opencode.nix;
   openshell = import ./openshell.nix;
   parallel = import ./parallel.nix;
@@ -68,6 +70,7 @@
   searxng = import ./searxng.nix;
   signal = import ./signal.nix;
   slack = import ./slack.nix;
+  slack-huddles = import ./slackHuddles.nix;
   sms = import ./sms.nix;
   stepfun = import ./stepfun.nix;
   synology-chat = import ./synologyChat.nix;
@@ -75,10 +78,12 @@
   tavily = import ./tavily.nix;
   team-reports = import ./teamReports.nix;
   teams-meetings = import ./teamsMeetings.nix;
+  telnyx = import ./telnyx.nix;
   tencent = import ./tencent.nix;
   tlon = import ./tlon.nix;
   tokenjuice = import ./tokenjuice.nix;
   twitch = import ./twitch.nix;
+  typesafe = import ./typesafe.nix;
   venice = import ./venice.nix;
   vercel-ai-gateway = import ./vercelAiGateway.nix;
   voice-call = import ./voiceCall.nix;

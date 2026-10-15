@@ -13,15 +13,15 @@
   minHostVersion = ">=2026.4.25";
   expectedIntegrity = "";
   packageName = "@openclaw/whatsapp";
-  version = "2026.9.5";
-  tarballUrl = "https://registry.npmjs.org/@openclaw/whatsapp/-/whatsapp-2026.9.5.tgz";
-  npmIntegrity = "sha512-V7o/ckrk0N0iN4fKk5jMBs4nqe4Ftc4/drJWY374fREY8gEMzmdvXMB2pfM2VrmptJfoPMMhI78C+1+mGUtwJw==";
-  npmShasum = "5ea4abec42b5300c12af22f1fc9881a7905ff346";
-  nixHash = "sha256-CyWJo3ElRR8z6xQsFKaEmSL6XgUDvNt1k/+Vv2Zjbj0=";
+  version = "2026.10.3";
+  tarballUrl = "https://registry.npmjs.org/@openclaw/whatsapp/-/whatsapp-2026.10.3.tgz";
+  npmIntegrity = "sha512-AL6ZCIf/35YEUstM2/xZ0Hfi5HxOl8QtYJKQQ+FRS/u8D/RvRFQlop1gFUSunqQ7i4J8NaQGiboxyC5hiAgpJg==";
+  npmShasum = "76630f0f00ea07d3975dc504a8fde4b8b53fe1a8";
+  nixHash = "sha256-YNKBIw8PjRYtky5W+rTykP5AY/rVHp+0ur0bVcZmPk4=";
   dependencyMode = "bundled";
   manifestId = "whatsapp";
-  openclawCompat = ">=2026.9.5";
-  peerOpenClaw = ">=2026.9.5";
+  openclawCompat = ">=2026.10.3";
+  peerOpenClaw = ">=2026.10.3";
   runtimeExtensions = [
     "./dist/index.js"
   ];
@@ -36,9 +36,9 @@
     ];
   };
   dependencies = {
-    audio-decode = "2.2.3";
+    audio-decode = "3.12.0";
     baileys = "7.0.0-rc14";
-    typebox = "1.3.30";
+    typebox = "1.3.34";
   };
   optionalDependencies = { };
   bundleDependencies = [
@@ -48,20 +48,38 @@
   ];
   bundledPackageRoots = [
     "node_modules/audio-decode"
+    "node_modules/audio-decode/node_modules/@audio/decode"
+    "node_modules/audio-decode/node_modules/@audio/decode-aac"
+    "node_modules/audio-decode/node_modules/@audio/decode-ac3"
+    "node_modules/audio-decode/node_modules/@audio/decode-aiff"
+    "node_modules/audio-decode/node_modules/@audio/decode-amr"
+    "node_modules/audio-decode/node_modules/@audio/decode-avi"
+    "node_modules/audio-decode/node_modules/@audio/decode-caf"
+    "node_modules/audio-decode/node_modules/@audio/decode-dsd"
+    "node_modules/audio-decode/node_modules/@audio/decode-dts"
+    "node_modules/audio-decode/node_modules/@audio/decode-eac3"
+    "node_modules/audio-decode/node_modules/@audio/decode-flac"
+    "node_modules/audio-decode/node_modules/@audio/decode-mod"
+    "node_modules/audio-decode/node_modules/@audio/decode-mp3"
+    "node_modules/audio-decode/node_modules/@audio/decode-mp4"
+    "node_modules/audio-decode/node_modules/@audio/decode-mpc"
+    "node_modules/audio-decode/node_modules/@audio/decode-opus"
+    "node_modules/audio-decode/node_modules/@audio/decode-qoa"
+    "node_modules/audio-decode/node_modules/@audio/decode-tta"
+    "node_modules/audio-decode/node_modules/@audio/decode-vorbis"
+    "node_modules/audio-decode/node_modules/@audio/decode-wav"
+    "node_modules/audio-decode/node_modules/@audio/decode-wavpack"
+    "node_modules/audio-decode/node_modules/@audio/decode-webm"
+    "node_modules/audio-decode/node_modules/@audio/decode-wma"
     "node_modules/audio-decode/node_modules/@eshaz/web-worker"
     "node_modules/audio-decode/node_modules/@thi.ng/bitstream"
     "node_modules/audio-decode/node_modules/@thi.ng/errors"
     "node_modules/audio-decode/node_modules/@wasm-audio-decoders/common"
     "node_modules/audio-decode/node_modules/@wasm-audio-decoders/flac"
     "node_modules/audio-decode/node_modules/@wasm-audio-decoders/ogg-vorbis"
-    "node_modules/audio-decode/node_modules/@wasm-audio-decoders/opus-ml"
-    "node_modules/audio-decode/node_modules/audio-buffer"
     "node_modules/audio-decode/node_modules/audio-type"
     "node_modules/audio-decode/node_modules/codec-parser"
     "node_modules/audio-decode/node_modules/mpg123-decoder"
-    "node_modules/audio-decode/node_modules/node-wav"
-    "node_modules/audio-decode/node_modules/ogg-opus-decoder"
-    "node_modules/audio-decode/node_modules/opus-decoder"
     "node_modules/audio-decode/node_modules/qoa-format"
     "node_modules/audio-decode/node_modules/simple-yenc"
     "node_modules/baileys"

@@ -13,15 +13,15 @@
   minHostVersion = ">=2026.4.10";
   expectedIntegrity = "";
   packageName = "@openclaw/matrix";
-  version = "2026.9.5";
-  tarballUrl = "https://registry.npmjs.org/@openclaw/matrix/-/matrix-2026.9.5.tgz";
-  npmIntegrity = "sha512-y7hLktQKp3gjuLE/z8p6RYZhZ9qEXX1iPc6+ABhR1y6m2F7EBhaWD9l2wxVP3gx3T1aSleHGrXfe0JfjC837zQ==";
-  npmShasum = "784b01fbe98ed074c80193496f036b5d0c2343c6";
-  nixHash = "sha256-I/A1+Njcr28jNazAsqBriU5r7cUlF/ZFlRa4cR7xpOo=";
+  version = "2026.10.3";
+  tarballUrl = "https://registry.npmjs.org/@openclaw/matrix/-/matrix-2026.10.3.tgz";
+  npmIntegrity = "sha512-Lu7SlRRsPjUUugFmnWF8sev9baJ2/Rb0OiUd5IVAa80/E74I3fy+mesE6qg3DgI3Up/ul4Up61KZvY2o5ZByXA==";
+  npmShasum = "67e8436be4e74885f1144fc3bff2d14ff1638a66";
+  nixHash = "sha256-07o/aetNaBifU26Bh5dkeT3T5QIURivby8dIp+Y3aOU=";
   dependencyMode = "bundled";
   manifestId = "matrix";
-  openclawCompat = ">=2026.9.5";
-  peerOpenClaw = ">=2026.9.5";
+  openclawCompat = ">=2026.10.3";
+  peerOpenClaw = ">=2026.10.3";
   runtimeExtensions = [
     "./dist/index.js"
   ];
@@ -33,17 +33,19 @@
   dependencies = {
     "@matrix-org/matrix-sdk-crypto-nodejs" = "0.6.6";
     "@matrix-org/matrix-sdk-crypto-wasm" = "18.8.0";
+    "@openclaw/fs-safe" = "0.24.2";
     fake-indexeddb = "6.2.5";
     markdown-it = "15.0.2";
-    matrix-js-sdk = "42.3.0";
+    matrix-js-sdk = "42.4.0";
     music-metadata = "11.15.0";
-    typebox = "1.3.30";
-    zod = "4.5.4";
+    typebox = "1.3.34";
+    zod = "4.6.5";
   };
   optionalDependencies = { };
   bundleDependencies = [
     "@matrix-org/matrix-sdk-crypto-nodejs"
     "@matrix-org/matrix-sdk-crypto-wasm"
+    "@openclaw/fs-safe"
     "fake-indexeddb"
     "markdown-it"
     "matrix-js-sdk"
@@ -52,51 +54,70 @@
     "zod"
   ];
   bundledPackageRoots = [
+    "node_modules/@babel/runtime"
+    "node_modules/@borewit/text-codec"
     "node_modules/@matrix-org/matrix-sdk-crypto-nodejs"
-    "node_modules/@matrix-org/matrix-sdk-crypto-nodejs/node_modules/agent-base"
-    "node_modules/@matrix-org/matrix-sdk-crypto-nodejs/node_modules/debug"
-    "node_modules/@matrix-org/matrix-sdk-crypto-nodejs/node_modules/https-proxy-agent"
-    "node_modules/@matrix-org/matrix-sdk-crypto-nodejs/node_modules/ms"
-    "node_modules/@matrix-org/matrix-sdk-crypto-nodejs/node_modules/node-downloader-helper"
     "node_modules/@matrix-org/matrix-sdk-crypto-wasm"
+    "node_modules/@openclaw/fs-safe"
+    "node_modules/@openclaw/fs-safe-darwin-arm64"
+    "node_modules/@openclaw/fs-safe-darwin-x64"
+    "node_modules/@openclaw/fs-safe-linux-arm64-gnu"
+    "node_modules/@openclaw/fs-safe-linux-arm64-musl"
+    "node_modules/@openclaw/fs-safe-linux-x64-gnu"
+    "node_modules/@openclaw/fs-safe-linux-x64-musl"
+    "node_modules/@openclaw/fs-safe-win32-x64-msvc"
+    "node_modules/@tokenizer/inflate"
+    "node_modules/@tokenizer/token"
+    "node_modules/@types/events"
+    "node_modules/agent-base"
+    "node_modules/another-json"
+    "node_modules/argparse"
+    "node_modules/base-x"
+    "node_modules/bs58"
+    "node_modules/content-type"
+    "node_modules/core-util-is"
+    "node_modules/debug"
+    "node_modules/entities"
+    "node_modules/events"
     "node_modules/fake-indexeddb"
+    "node_modules/file-type"
+    "node_modules/https-proxy-agent"
+    "node_modules/ieee754"
+    "node_modules/immediate"
+    "node_modules/inherits"
+    "node_modules/is-network-error"
+    "node_modules/isarray"
+    "node_modules/jszip"
+    "node_modules/lie"
+    "node_modules/linkify-it"
+    "node_modules/loglevel"
     "node_modules/markdown-it"
-    "node_modules/markdown-it/node_modules/argparse"
-    "node_modules/markdown-it/node_modules/entities"
-    "node_modules/markdown-it/node_modules/linkify-it"
-    "node_modules/markdown-it/node_modules/mdurl"
-    "node_modules/markdown-it/node_modules/punycode.js"
-    "node_modules/markdown-it/node_modules/uc.micro"
+    "node_modules/matrix-events-sdk"
     "node_modules/matrix-js-sdk"
-    "node_modules/matrix-js-sdk/node_modules/@babel/runtime"
-    "node_modules/matrix-js-sdk/node_modules/@types/events"
-    "node_modules/matrix-js-sdk/node_modules/another-json"
-    "node_modules/matrix-js-sdk/node_modules/base-x"
-    "node_modules/matrix-js-sdk/node_modules/bs58"
-    "node_modules/matrix-js-sdk/node_modules/content-type"
-    "node_modules/matrix-js-sdk/node_modules/events"
-    "node_modules/matrix-js-sdk/node_modules/is-network-error"
-    "node_modules/matrix-js-sdk/node_modules/loglevel"
-    "node_modules/matrix-js-sdk/node_modules/matrix-events-sdk"
-    "node_modules/matrix-js-sdk/node_modules/matrix-widget-api"
-    "node_modules/matrix-js-sdk/node_modules/p-retry"
-    "node_modules/matrix-js-sdk/node_modules/sdp-transform"
-    "node_modules/matrix-js-sdk/node_modules/unhomoglyph"
+    "node_modules/matrix-widget-api"
+    "node_modules/mdurl"
+    "node_modules/media-typer"
+    "node_modules/ms"
     "node_modules/music-metadata"
-    "node_modules/music-metadata/node_modules/@borewit/text-codec"
-    "node_modules/music-metadata/node_modules/@tokenizer/inflate"
-    "node_modules/music-metadata/node_modules/@tokenizer/token"
     "node_modules/music-metadata/node_modules/content-type"
-    "node_modules/music-metadata/node_modules/debug"
-    "node_modules/music-metadata/node_modules/file-type"
-    "node_modules/music-metadata/node_modules/ieee754"
-    "node_modules/music-metadata/node_modules/media-typer"
-    "node_modules/music-metadata/node_modules/ms"
-    "node_modules/music-metadata/node_modules/strtok3"
-    "node_modules/music-metadata/node_modules/token-types"
-    "node_modules/music-metadata/node_modules/uint8array-extras"
-    "node_modules/music-metadata/node_modules/win-guid"
+    "node_modules/node-downloader-helper"
+    "node_modules/p-retry"
+    "node_modules/pako"
+    "node_modules/process-nextick-args"
+    "node_modules/punycode.js"
+    "node_modules/readable-stream"
+    "node_modules/safe-buffer"
+    "node_modules/sdp-transform"
+    "node_modules/setimmediate"
+    "node_modules/string_decoder"
+    "node_modules/strtok3"
+    "node_modules/token-types"
     "node_modules/typebox"
+    "node_modules/uc.micro"
+    "node_modules/uint8array-extras"
+    "node_modules/unhomoglyph"
+    "node_modules/util-deprecate"
+    "node_modules/win-guid"
     "node_modules/zod"
   ];
 }
