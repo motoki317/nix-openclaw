@@ -66,11 +66,11 @@ requireContract(
 }`,
   "Nix environment resolver",
 );
-const realpathSource = importedOwner(policy, realpath, old ? "path" : "plugin-cache-files");
+const realpathSource = importedOwner(policy, realpath, old ? "path" : "(?:plugin-cache-files|package-manifest)");
 const optimizedRealpath = !old && realpathSource.includes("function resolveRealpath(");
 if (optimizedRealpath) {
   requireContract(
-    declaration(realpathSource, "resolveRealpath") ===
+    [
       `function resolveRealpath(targetPath) {
 \tconst absolute = path.resolve(targetPath);
 \ttry {
@@ -78,6 +78,11 @@ if (optimizedRealpath) {
 \t} catch {}
 \treturn fs.realpathSync(targetPath);
 }`,
+      `function resolveRealpath(targetPath) {
+\tif (path.resolve(targetPath) === targetPath && pluginCacheRealpathSync(targetPath, true) === targetPath) return targetPath;
+\treturn fs.realpathSync(targetPath);
+}`,
+    ].includes(declaration(realpathSource, "resolveRealpath")),
     "canonical realpath helper",
   );
 }

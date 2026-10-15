@@ -6,10 +6,11 @@ import {
   fixture, patch, load, snapshot, change, envFor, paramsFor, restoreEnv, packageFixture, templateDocs,
 } from "./patch-openclaw-npm-dist.fixtures.mjs";
 
-for (const variant of ["js", "mjs", "mjs-optimized-realpath"]) {
+for (const variant of ["js", "mjs", "mjs-optimized-realpath", "mjs-cached-realpath"]) {
   const ext = variant === "js" ? "js" : "mjs";
-  const optimizedRealpath = variant === "mjs-optimized-realpath";
-  const fixtureFor = (t) => fixture(t, ext, { optimizedRealpath });
+  const cachedRealpath = variant === "mjs-cached-realpath";
+  const optimizedRealpath = variant === "mjs-optimized-realpath" || cachedRealpath;
+  const fixtureFor = (t) => fixture(t, ext, { optimizedRealpath, cachedRealpath });
   test(`${variant}: emitted ownership/policy preserve guards and env boundaries`, async (t) => {
     const f = fixtureFor(t),
       result = patch(f);
@@ -103,7 +104,10 @@ for (const variant of ["js", "mjs", "mjs-optimized-realpath"]) {
     ...(optimizedRealpath ? {
       "unsafe-realpath-helper": ["dependency", "return fs.realpathSync(targetPath);", "return targetPath;"],
       "renamed-realpath-helper": ["dependency", "function resolveRealpath(", "function otherRealpath("],
-      "unchecked-native-realpath": ["dependency", "fs.realpathSync.native(targetPath) === targetPath", "true"],
+      "unchecked-native-realpath": ["dependency", `${cachedRealpath ? "pluginCacheRealpathSync(targetPath, true)" : "fs.realpathSync.native(targetPath)"} === targetPath`, "true"],
+    } : {}),
+    ...(cachedRealpath ? {
+      "recursive-realpath": ["dependency", "pluginCacheRealpathSync(targetPath, true)", "pluginCacheRealpathSync(targetPath)"],
     } : {}),
     "wrong-binding": ["discovery", "{ t as shouldReject", "{ x as shouldReject"],
     "comment-binding": ["discovery", "import { t as shouldReject", "// import { t as shouldReject"],
