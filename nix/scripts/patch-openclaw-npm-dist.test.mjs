@@ -51,12 +51,13 @@ export function createMcpOAuthClientProvider(params) {
   assert.equal(await module.createMcpOAuthClientProvider({ suppressStoredTokens: true }).tokens(), undefined);
 });
 
-for (const variant of ["js", "mjs", "mjs-optimized-realpath", "mjs-cached-native-realpath", "mjs-context-loops"]) {
+for (const variant of ["js", "mjs", "mjs-optimized-realpath", "mjs-cached-native-realpath", "mjs-context-loops", "mjs-parent-realpath"]) {
   const ext = variant === "js" ? "js" : "mjs";
-  const contextLoops = variant === "mjs-context-loops";
+  const parentRealpath = variant === "mjs-parent-realpath";
+  const contextLoops = variant === "mjs-context-loops" || parentRealpath;
   const cachedNativeRealpath = variant === "mjs-cached-native-realpath" || contextLoops;
   const optimizedRealpath = variant === "mjs-optimized-realpath" || cachedNativeRealpath;
-  const fixtureFor = (t) => fixture(t, ext, { optimizedRealpath, cachedNativeRealpath, contextLoops });
+  const fixtureFor = (t) => fixture(t, ext, { optimizedRealpath, cachedNativeRealpath, parentRealpath, contextLoops });
   test(`${variant}: emitted ownership/policy preserve guards and env boundaries`, async (t) => {
     const f = fixtureFor(t),
       result = patch(f);
@@ -146,11 +147,36 @@ for (const variant of ["js", "mjs", "mjs-optimized-realpath", "mjs-cached-native
     assert.ok(second.status === 0 || second.status === 1);
     assert.deepEqual(snapshot(f), before);
   });
+  if (parentRealpath) test(`${variant}: resolves canonical, symlinked and missing parents`, async (t) => {
+    const f = fixtureFor(t);
+    assert.equal(patch(f).status, 0);
+    const { f: realpath, roots } = await load(f, f.dependency);
+    const dir = path.join(f.root, "parent"), alias = path.join(f.root, "alias");
+    fs.mkdirSync(dir);
+    const child = path.join(dir, "child");
+    fs.writeFileSync(child, "");
+    fs.symlinkSync(dir, alias);
+    fs.symlinkSync(child, path.join(dir, "link"));
+    for (const target of [child, path.join(alias, "child"), path.join(dir, "link"), path.relative(process.cwd(), child), "/"]) {
+      assert.equal(realpath(target), fs.realpathSync(target));
+    }
+    assert.equal(realpath(path.join(alias, "missing")), null);
+    assert.equal(realpath(path.join(f.root, "missing", "child")), null);
+    roots.clear();
+    assert.equal(realpath(child, true), fs.realpathSync.native(child));
+    assert.equal(realpath(child), fs.realpathSync(child));
+  });
   const mutations = {
     ...(optimizedRealpath ? {
       "unsafe-realpath-helper": ["dependency", "return fs.realpathSync(targetPath);", "return targetPath;"],
       "renamed-realpath-helper": ["dependency", "function resolveRealpath(", "function otherRealpath("],
       "unchecked-native-realpath": ["dependency", `${cachedNativeRealpath ? "pluginCacheRealpathSync(targetPath, true)" : "fs.realpathSync.native(targetPath)"} === targetPath`, "true"],
+    } : {}),
+    ...(parentRealpath ? {
+      "unchecked-cached-realpath": ["dependency", "pathFacts(targetPath).nativeRealpath === targetPath", "true"],
+      "unchecked-symlink": ["dependency", "!stat.isSymbolicLink()", "true"],
+      "unchecked-parent": ["dependency", "pluginCacheRealpathSync(parent)", "parent"],
+      "followed-lstat": ["dependency", "fs.lstatSync(targetPath)", "fs.statSync(targetPath)"],
     } : {}),
     "wrong-binding": ["discovery", "{ t as shouldReject", "{ x as shouldReject"],
     "comment-binding": ["discovery", "import { t as shouldReject", "// import { t as shouldReject"],
