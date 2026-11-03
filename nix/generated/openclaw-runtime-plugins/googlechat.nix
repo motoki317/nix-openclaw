@@ -13,15 +13,15 @@
   minHostVersion = ">=2026.9.8";
   expectedIntegrity = "";
   packageName = "@openclaw/googlechat";
-  version = "2026.10.7";
-  tarballUrl = "https://registry.npmjs.org/@openclaw/googlechat/-/googlechat-2026.10.7.tgz";
-  npmIntegrity = "sha512-i0qeWcoVjmGKO9r6ooTygEuSllCFEhhX/ie9vrGAzNIQOwZZDrow5/46JbUy4a2oDaOV5epc7H+9xLmYok5lIQ==";
-  npmShasum = "0762f8fdc9d6114d6ffeba7179bd76e515d3c32f";
-  nixHash = "sha256-h48PzMyqTThtJ5oYoJJ7/mlrAXqfnJpVjpGLnfIvIzI=";
+  version = "2026.10.10";
+  tarballUrl = "https://registry.npmjs.org/@openclaw/googlechat/-/googlechat-2026.10.10.tgz";
+  npmIntegrity = "sha512-sJbKWmAsvTZo/Wuqmi7/iU6Wfe4d1vo7DCFke7fmEG9EAqKSi9hR8Tw/J6evsaSCzbXo5FCOVxc2PDC71TIHcw==";
+  npmShasum = "237e6d6dcc1ee0e7aea8d7a816c7086bdb3d065f";
+  nixHash = "sha256-0QxoL8WLKpRUYGm9eojYYWcpimPFSxHrAEBvgq6r9SI=";
   dependencyMode = "bundled";
   manifestId = "googlechat";
-  openclawCompat = ">=2026.10.7";
-  peerOpenClaw = ">=2026.10.7";
+  openclawCompat = ">=2026.10.10";
+  peerOpenClaw = ">=2026.10.10";
   runtimeExtensions = [
     "./dist/index.js"
   ];

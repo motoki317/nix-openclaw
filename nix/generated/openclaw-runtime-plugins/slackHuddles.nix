@@ -13,15 +13,15 @@
   minHostVersion = ">=2026.9.8";
   expectedIntegrity = "";
   packageName = "@openclaw/slack-huddles";
-  version = "2026.10.7";
-  tarballUrl = "https://registry.npmjs.org/@openclaw/slack-huddles/-/slack-huddles-2026.10.7.tgz";
-  npmIntegrity = "sha512-ASkW51ZPCOtJFdMWyScFuUClwiT7xUqppRIaspjnyedRO2k9ESNrnPldo0+lJxYQZ156RMs53J8EOHYaSfDdbQ==";
-  npmShasum = "40c61f2975db55ac62be0c291f51521a82b218d3";
-  nixHash = "sha256-aSj0dh9uX7tSjZZF8WQTJqu/7bGa2UeQ+q+pI/bal8g=";
+  version = "2026.10.10";
+  tarballUrl = "https://registry.npmjs.org/@openclaw/slack-huddles/-/slack-huddles-2026.10.10.tgz";
+  npmIntegrity = "sha512-AFxA/8VoaLEk9ejX2qkk3MW8LXBOmPZ63S4ILtqnE2EIlZCbk9AkM+IjnCq7FPD+PklpjvPmJDlLNJHuljuQhA==";
+  npmShasum = "427e6a7013f4f449e2eb4d4d8cd90c6cb9f83ed6";
+  nixHash = "sha256-Alw9hp+x7jcmlcXdFI71AuhqvbrDTe0bt2d7z0ROaac=";
   dependencyMode = "none";
   manifestId = "slack-huddles";
-  openclawCompat = ">=2026.10.7";
-  peerOpenClaw = ">=2026.10.7";
+  openclawCompat = ">=2026.10.10";
+  peerOpenClaw = ">=2026.10.10";
   runtimeExtensions = [
     "./dist/index.js"
   ];

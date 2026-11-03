@@ -13,15 +13,15 @@
   minHostVersion = ">=2026.6.9";
   expectedIntegrity = "";
   packageName = "@openclaw/moonshot-provider";
-  version = "2026.10.7";
-  tarballUrl = "https://registry.npmjs.org/@openclaw/moonshot-provider/-/moonshot-provider-2026.10.7.tgz";
-  npmIntegrity = "sha512-ZtKDEYJ627XYKW2xqEFPyXlp26H4A692wPFM9pEo1BUt53t682mJ6EYyoffpl7kx1dsQIQoTbiZ8cOGU1qLy0Q==";
-  npmShasum = "820bd955df5c99c4b0ff1e96233c7ba63f741169";
-  nixHash = "sha256-CqEXlaejEkuQiDbWR4RmgOjwdfRezjcIsKubaWtJRW8=";
+  version = "2026.10.10";
+  tarballUrl = "https://registry.npmjs.org/@openclaw/moonshot-provider/-/moonshot-provider-2026.10.10.tgz";
+  npmIntegrity = "sha512-QFdk18DzvVEZyGC7x2x8VO2AsCplBbaRQC54Gm2Vay17pe23VlxbOBz86fOjE2bnjmtlWGVJGNMafh9LlnmeWg==";
+  npmShasum = "8f1177bf94992998d34c84c5e2a5bf77b6db3f53";
+  nixHash = "sha256-d6itv4f2LNtWFInNq+9dp4nZrguY4NVJhRQusMUs3eU=";
   dependencyMode = "none";
   manifestId = "moonshot";
-  openclawCompat = ">=2026.10.7";
-  peerOpenClaw = ">=2026.10.7";
+  openclawCompat = ">=2026.10.10";
+  peerOpenClaw = ">=2026.10.10";
   runtimeExtensions = [
     "./dist/index.js"
   ];

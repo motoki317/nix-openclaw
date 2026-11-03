@@ -13,15 +13,15 @@
   minHostVersion = ">=2026.4.10";
   expectedIntegrity = "";
   packageName = "@openclaw/matrix";
-  version = "2026.10.7";
-  tarballUrl = "https://registry.npmjs.org/@openclaw/matrix/-/matrix-2026.10.7.tgz";
-  npmIntegrity = "sha512-MHkOZTIKosMT1D8WiO2gnRpcORk+DCT+O1pRVBbA7wH6SYcaRfBWjWaTgA9UfQmzoPnBRrD2hk9f7pbOQFXLbA==";
-  npmShasum = "bf76422b4d82b72139e46a8ca7e28dd47b99fd0b";
-  nixHash = "sha256-WuvuFrurtdh7Z66A+z07Wowzjmy1Wwv8M+l2x9nzp0k=";
+  version = "2026.10.10";
+  tarballUrl = "https://registry.npmjs.org/@openclaw/matrix/-/matrix-2026.10.10.tgz";
+  npmIntegrity = "sha512-6RuCKPLufcCNpEOdtg4Ld7+8SVJfl9aGO/Md8HhLI69InX7cwiHLSsDDLkA3xyPrJy74LFsLropIeU52EoZCcA==";
+  npmShasum = "7b587b1391ec46a4ddeea7a5fb7d9f9fa6793b2a";
+  nixHash = "sha256-084bZUcWfadrZ3BYUmyHSBn29wm0VFhGfU5PNjOHqhQ=";
   dependencyMode = "bundled";
   manifestId = "matrix";
-  openclawCompat = ">=2026.10.7";
-  peerOpenClaw = ">=2026.10.7";
+  openclawCompat = ">=2026.10.10";
+  peerOpenClaw = ">=2026.10.10";
   runtimeExtensions = [
     "./dist/index.js"
   ];
@@ -33,12 +33,12 @@
   dependencies = {
     "@matrix-org/matrix-sdk-crypto-nodejs" = "0.6.6";
     "@matrix-org/matrix-sdk-crypto-wasm" = "18.9.0";
-    "@openclaw/fs-safe" = "0.26.0";
+    "@openclaw/fs-safe" = "0.26.5";
     fake-indexeddb = "6.2.5";
     markdown-it = "15.0.2";
     matrix-js-sdk = "42.4.0";
     music-metadata = "11.16.1";
-    typebox = "1.3.34";
+    typebox = "1.3.35";
     zod = "4.6.5";
   };
   optionalDependencies = { };
